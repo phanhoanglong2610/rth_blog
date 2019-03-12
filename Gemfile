@@ -7,7 +7,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -37,6 +36,7 @@ group :development do
   gem 'better_errors'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'bootstrap-generators'
 end
 group :development, :test do
   gem 'factory_bot_rails'

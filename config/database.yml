@@ -18,8 +18,8 @@ development:
   encoding: unicode
   database: rth_blog_development
   pool:     5
-  username: rth_dba
-  password: rth_dba
+  username: postgres
+  password: postgres
   template: template0
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -46,8 +46,8 @@ test:
   encoding: unicode
   database: rth_blog_test
   pool:     5
-  username: rth_dba
-  password: rth_dba
+  username: postgres
+  password: postgres
   template: template0
 
 production:
@@ -56,6 +56,6 @@ production:
   encoding: unicode
   database: rth_blog_production
   pool:     5
-  username: rth_dba
-  password: rth_dba
+  username: postgres
+  password: postgres
   template: template0
