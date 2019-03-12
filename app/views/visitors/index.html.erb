@@ -18,7 +18,7 @@
 				<p class="card-text">
 					<%= post.body.slice(0, 150) %>...
 				</p>
-				<a href="#" class="btn btn-primary">Read More &rarr;</a>
+				<a href="/visitors/<%= post.id %>" class="btn btn-primary">Read More &rarr;</a>
 			</div>
 			<div class="card-footer text-muted">
 				Posted on <%= time_ago_in_words(post.created_at) %> by <%= post.user.email %>
@@ -39,6 +39,21 @@
 				<form action="/">
 					<div class="input-group" style="width: 90%">
 						<input type="text" name="str" class="form-control" placeholder="">
+						<span class="input-group-btn">
+							<button class="btn btn-secondary" type="submit">Go!</button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Sort Widget -->
+		<div class="card my-4">
+			<h5 class="card-header">View Latest Posts</h5>
+			<div class="card-body">
+				<form action="/">
+					<div class="input-group" style="width: 90%">
+						<input type="hidden" name="view" class="form-control" value="latest">
 						<span class="input-group-btn">
 							<button class="btn btn-secondary" type="submit">Go!</button>
 						</span>

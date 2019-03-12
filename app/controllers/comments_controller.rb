@@ -31,9 +31,14 @@ class CommentsController < ApplicationController
   # POST /comments
   def create
     @comment = Comment.new(comment_params)
+    @comment.user_id = current_user.id
 
     if @comment.save
-      redirect_to @comment, notice: 'Comment was successfully created.'
+      if params[:from].present?
+        redirect_to visitor_path(comment_params['post_id']), notice: 'Comment was successfully created.'
+      else
+        redirect_to @comment, notice: 'Comment was successfully created.'
+      end
     else
       render :new
     end
