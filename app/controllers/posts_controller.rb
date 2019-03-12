@@ -5,9 +5,9 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     if current_user.admin?
-      @posts = Post.all
+      @posts = Post.paginate(:page => params[:page])
     else
-      @posts = Post.where(:user_id => current_user.id)
+      @posts = Post.where(:user_id => current_user.id).paginate(:page => params[:page])
     end
   end
 

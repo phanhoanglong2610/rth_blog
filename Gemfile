@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
+gem 'will_paginate', '~> 3.1.0'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'

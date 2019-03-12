@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
   # GET /comments
   def index
     if current_user.admin?
-      @comments = Comment.all
+      @comments = Comment.paginate(:page => params[:page])
     else
-      @comments = Comment.where(:user_id => current_user.id)
+      @comments = Comment.where(:user_id => current_user.id).paginate(:page => params[:page])
     end
   end
 
