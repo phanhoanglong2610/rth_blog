@@ -1,9 +1,14 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
 
   # GET /comments
   def index
-    @comments = Comment.all
+    if current_user.admin?
+      @comments = Comment.all
+    else
+      @comments = Comment.where(:user_id => current_user.id)
+    end
   end
 
   # GET /comments/1
@@ -12,11 +17,15 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
+    @posts = Post.all
+    @users = User.all
     @comment = Comment.new
   end
 
   # GET /comments/1/edit
   def edit
+    @posts = Post.all
+    @users = User.all
   end
 
   # POST /comments
@@ -53,6 +62,6 @@ class CommentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def comment_params
-      params.require(:comment).permit(:post_id, :body, :user_id)
+      params.require(:comment).permit(:post_id, :body)
     end
 end
