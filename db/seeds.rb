@@ -27,6 +27,10 @@ category2 = Category.create(:name => "Ruby")
 category3 = Category.create(:name => "AngularJS")
 category4 = Category.create(:name => "PHP")
 category5 = Category.create(:name => "Others")
+category6 = Category.create(:name => "Design Pattern")
+category7 = Category.create(:name => "Algorithm")
+category8 = Category.create(:name => "Framework")
+category9 = Category.create(:name => "References")
 
 # Posts
 post_title = "Lorem ipsum dolor sit amet"
