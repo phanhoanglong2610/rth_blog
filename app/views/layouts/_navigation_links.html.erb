@@ -1,4 +1,9 @@
 <%# add navigation links to this file %>
-<li class="active"><a href="#">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
+<% if user_signed_in? %>
+	<%= link_to 'Blogs', posts_path, class: 'navbar-brand' %>
+	<%= link_to 'Comments', comments_path, class: 'navbar-brand' %>
+	<%= link_to 'Categories', categories_path, class: 'navbar-brand' %>
+<% end %>
+
+<%= link_to 'About', pages_about_path, class: 'navbar-brand' %>
+<%= link_to 'Contact', pages_contact_path, class: 'navbar-brand' %>
